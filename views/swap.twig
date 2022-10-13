@@ -1,0 +1,27 @@
+{% extends 'components/layout.twig' %}
+<!---->
+{% block body %}
+
+<body>
+    <!---->
+    {% include "/sections/swap/heading.twig" %}
+    <!---->
+    <div class="row">
+        <div class="col-12">
+            <div class="section-title mb-4 pb-2 text-center">
+                <h4 class="title mb-4">Exchange Support</h4>
+                <p class=" text-muted mb-0 text-center">Below you will find an overview and status of exchanges migrating to mainnet.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        {% include "/sections/swap/exchanges.twig" %}
+    </div>
+</body>
+
+{% endblock %}
+<!---->
+{% block javascripts %}
+<!---->
+{% endblock %}

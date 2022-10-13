@@ -1,0 +1,37 @@
+{% extends 'layout.twig' %} {% block body %}
+
+<body data-spy="scroll" data-target="#mobile-wallet-menu" data-offset="150">
+
+    {% include "/blocks/navbar.twig" %}
+    <!--============= Header Section Ends Here =============-->
+    <section class="banner-7 bg_img oh bottom_right" data-background="./assets/images/banner/banner-bg-7.jpg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="section-header  coverage-header">
+                        <h2 class="title">Solar Blockchain Foundation</h2>
+                        <p>
+                            The Solar Blockchain Foundation is a non-profit foundation. </br>
+                            The Solar Blockchain Foundation launched without ICOs or equity investments.</br>
+                            The marketing, exchange integrations, commercial activities, staffing, legal counsel and administrative operations are funded by donations received in SXP.</br>
+                            </br>
+                        </p>
+                        <p> Solar Blockchain Foundation Wallet (SXP):
+                            <br><a target="_blank" href="https://explorer.solar.org/wallets/Sdao2USyAz9B6RBgZeFyNDePuQAxfzZZHE">Sdao2USyAz9B6RBgZeFyNDePuQAxfzZZHE</a></br>
+                            Current Balance: <span id="balance"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---->
+
+
+
+    <!---->
+    {% include "/blocks/footer.twig" %}
+
+
+</body>
+{% endblock %}

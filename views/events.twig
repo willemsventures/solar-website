@@ -1,0 +1,50 @@
+{% extends 'components/layout.twig' %} {% block body %}
+
+<body>
+    <!---->
+    {% include "/sections/events/heading.twig" %}
+    <!---->
+    <!-- sxptodo add instructions about adding your own event + disclaimer about 3rd party events not hosted by Solar -->
+
+    <section class="section">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-lg-12 col-md-12 col-12 text-center">
+                    <div class="section-title">
+                        <!-- <h4 class="title title-dark mb-4"></h4>-->
+                        <p class=" mb-5">Below you will find the calendar to Solar (SXP) related events.<br> If you would like to host your own Solar (SXP) related event and add it to the calendar,<br>please <a target="_blank" href="https://t.me/@Celeste_77">click here</a>                            to contact our marketing manager on telegram.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div style="width:100%;height:500px;" class="ae-emd-cal-events" data-calendar="uc505971" data-lbl-upcoming="Upcoming events" data-lbl-subscribe="Subscribe" data-no-events="No events found.." data-lbl-readmore="Read more" data-include-atc="true" data-include-stc="true"
+                data-include-moupcpicker="true" data-include-location="true" data-include-timezone="true" data-include-organizer="true" data-include-countdown="true" data-include-description="true" data-include-timezone-select="true" data-default-view="upcoming"
+                data-stayonpage="false" data-datetime-format="2" data-datetime-language="en_GB" data-events-max="20" data-description-length="brief"></div>
+            <script type="text/javascript" src="https://cdn.addevent.com/libs/cal/js/cal.events.embed.t3.init.js"></script>
+        </div>
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-lg-12 col-md-12 col-12 text-center">
+                    <div class="section-title">
+                        <!-- <h4 class="title title-dark mb-4"></h4>-->
+                        <p class="mt-2">The calendar includes events organised by the Solar Blockchain Foundation and 3rd Parties (individuals).
+                            <br> The Solar Blockchain Foundation is not able to verify the legitimacy of 3rd Party events. <br>Please click on the disclaimer button below to learn more.
+                        </p>
+                        <div class="text-center mt-2">
+                            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#disclaimer-events"><span
+                                                class="badge rounded-pill bg-soft-primary">* Disclaimer</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</body>
+{% endblock %} {% block javascripts %}
+<!---->
+{% endblock %}

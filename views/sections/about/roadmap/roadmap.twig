@@ -1,0 +1,507 @@
+{% extends 'layout.twig' %} {% block body %}
+
+<body data-spy="scroll" data-target="#mobile-wallet-menu" data-offset="150">
+
+    {% include "/blocks/navbar.twig" %}
+
+    <!-- sxptodo 
+        - link delegate names to proposal page 
+    -->
+
+    <section class="how-section-two oh pos-rel mt-120 mt-max-lg-0" id="how" style="margin-bottom:150px;">
+        <div class="container">
+            <div class="row flex-wrap-reverse">
+
+                <div class="col-lg-12 padding-top" style="margin-bottom:50px;">
+                    <div class="section-header">
+                        <h2 class="title">Join our journey</h2>
+                        <p>Below you will find the roadmap and vision of Solar.<br> Please note that due to compliance and regulatory factors, the Solar Foundation will not give any dates on roadmap items to avoid speculation that might result in classing
+                            SXP as a security. There may be 3rd party tools, blogs, and other contributions made by parties that are not members of the Solar Foundation. These contributions may include coin burning, gambling, speculation and other features
+                            not endorsed by the Solar Foundation. The Solar Foundation recognizes these contributors and their contributions but does not endorse or develop them.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <h2 class="roadmap-milestone mb-2 mt-2" style="text-align:center;justify-content:center;">Foundation Roadmap
+                    </h2>
+                    <h4 class="mb-2 mt-2" style="color:black;text-align:center;justify-content:center;">Learn more about the Solar Foundation
+                    </h4>
+
+                    <div class="accordion">
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check"></i> Whitepaper Release</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">A new whitepaper for 2022 will be released with a better explanation of the Core blockchain, tokenomics, the community, the goals of the Solar project and anything that is being mentioned in the Solar roadmap.
+                                </p>
+                                <p class="solar">Status: Complete</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                            <span class="accordion__caption"><i class="fa fa-check"></i> AMA Session</span>
+                                            <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                                        </button>
+                            <div class="accordion__content">
+                                <p class="solar">An AMA session will be organized with founder of Solar. This AMA has now been announced and scheduled and will be given on the 11th of April at 18:00 UTC in the Solar telegram group.
+                                </p>
+                                <p class="solar">Status: Complete</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check"></i> Formation of the Solar Foundation</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">Solar decided to move the project to a foundation similar to the Ethereum Foundation and focus on utility. This will allow Solar to become compliant with US regulations.
+                                </p>
+                                <p class="solar">Status: Complete. <a href="https://ariregister.rik.ee/eng/company/project/9000336046?search_id=1158057&pos=1&active_tab=proceeding_info" target="_blank">(Source)</a></p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check"></i> Transition to Foundation</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">The Solar project moved to a foundation in Estonia. More information to be announced on <a href="https://solar.discourse.group" target="">Solar Discourse</a>.
+                                </p>
+                                <p class="solar">Status: Complete</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check" style="color:orangered;"></i> Solar Foundation Boardmembers Guide</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">The Solar project will launch a foundation and anyone will be able to join the foundation based on specific requirements. This information will be provided on the <a href="https://solar.discourse.group" target="">Solar Discourse</a>.
+                                </p>
+                                <p class="solar">Status: In progress.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check" style="color:orangered;"></i> Whitepaper Update</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">The updated whitepaper will now include detailed information about the Solar Metaverse and minor changes to existing plans might be made.
+                                </p>
+                                <p class="solar">Status: In progress.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5 mt-5">
+                <div class="col-xl-12">
+                    <h2 class="roadmap-milestone mb-2 mt-2" style="text-align:center;justify-content:center;">Development Roadmap</h2>
+                    <h4 class="mb-2 mt-2" style="color:black;text-align:center;justify-content:center;">Projects and development endorsed by the Solar Foundation
+                    </h4>
+                    <div class="accordion">
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check"></i> Deploy Operational
+                                    Testnet</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">SXP will have its own mainnet blockchain with its own native SXP coins. Most SXP holders will be joining from the ERC20/BEP20 framework. The current holders will have to get familiar with the new framework. By having a
+                                    testnet, users can already interact with a network that will be similar to mainnet. Developers will be able to deploy and test their tools on testnet without spending gas that has any monetary value. Testnet coins can
+                                    be obtained from the Solar Discord or from the @dSXPBot on Telegram.
+                                </p>
+                                <p class="solar">Status: Complete</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check"></i> Release Desktop
+                                    Wallets v2</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">A new desktop wallet forked from ADW will be released with many improvements and enhancements to work with the Solar Blockchain.
+                                </p>
+                                <p class="solar">Status: Complete</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check"></i> SDK & Libraries</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">New SDK libraries and documentation will be released in our dedicated documentation page. https://docs.solar.org. These libraries will be used by exchange organizations that are supporting the SXP coin on their platform.
+                                </p>
+                                <p class="solar">Status: Continous development in sync with Core updates</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check" style="color:orangered;"></i> Deploy Side Ledger Protocol
+                                    on testnet</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">Solar Side Ledger Protocol (SLP) is our own unique feature that utilizes the memo field on the SXP blockchain. The native SXP coin will be used to pay fees for SLP transactions. SLP will be deployed on testnet at first
+                                    to allow people to get familiar with SLP and developers of this protocol will be able to modify and finetune the features. SLP will allow users to create fungible and non-fungible tokens. The fungible tokens are a “ERC20”
+                                    like and can be used for many applications such as ICO’s and funding programs, but also for supply chain management, meme tokens etc. The NFT’s will support metadata from the start and can be used in a wide variety
+                                    of applications.
+                                </p>
+                                <p class="solar">Status: A new version of SLP is currently being developed that will be different from the current implementation on testnet. The new version will focus on better features that more widely recognized and known by developers
+                                    and other projects in the industry.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check"></i> Voter & Delegate Documentation</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">As explained in the “Publish Delegates Proposal page”, documentation will be provided for voters and delegates. Delegates are forging blocks on the network. For each block they forge, they will receive 10 SXP. This SXP
+                                    is usually shared with the voters. It is important to know that voting for the highest sharing delegate can have a negative effect on the network. Sometimes it's more beneficial to the whole project to vote for delegates
+                                    that contribute more to Solar. More about this will be explained in the documentation.
+                                </p>
+                                <p class="solar">Status: Complete</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check"></i> Deploy Mainnet</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">A fresh blockchain will be deployed during this phase. The block count will start from 1 and new blocks will be forged every 8 seconds.</p>
+                                <p class="solar">Status: Complete</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check"></i> Staking Enabled</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">
+                                    Staking starts directly at mainnet launch. Block rewards start at block 75632.<br> The estimated time to start block rewards is around 7 days.<br>
+                                    <a href="https://docs.solar.org/desktop-wallet/introduction-to-solar-rewards/" target="_blank">Click here to learn more about staking</a>.
+                                </p>
+                                <p class="solar">Status: Complete</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check"></i> Swap from ERC20/BEP20 to Mainnet</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">A complete and detailed swap instructions will be provided in our dedicated documentation page. The document will be available <a href="https://docs.solar.org/sxpswap/introduction/" target="_blank">here</a>.<br> Current
+                                    SXP holders on ERC20/BEP20 are free to swap their tokens to SXP mainnet with the tools provided by the Solar Foundation.
+                                </p>
+                                <p class="solar">Status: Complete</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check" style="color:orangered;"></i> Release Mobile Application</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">A mobile application will be released to interact with the SXP Blockchain.
+                                </p>
+                                <p class="solar">Status: Alpha. <br>The mobile application is currently being tested and a demo is already available for selected users in the Google PlayStore.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-exclamation" style="color:red;"></i> Release Web Wallet</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">A web wallet forked from upstream will be released with similar features and style as the desktop wallet.
+                                </p>
+                                <p class="solar">Status: The original planned implementation of the web wallet will no longer be developed or released.<br> As an alternative, in collaboration with delegate "leitesv" we have prioritized the release of the branded Solar
+                                    Browser Wallet.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption">Core Audit</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">The Solar foundation will request a 3rd-party on the Core after block finality and several other improvements have been made.
+                                </p>
+                                <p class="solar">Status: Not started.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check" style="color:orangered;"></i> Deploy SLP on Mainnet</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">The Solar Side Ledger Protocol (SLP) will be officially deployed on the SXP blockchain. Its main utility is to allow anyone to create dApps, simple tokens or NFT creators to build on the SXP blockchain. The native SXP will
+                                    be used to cover (gas) on all SLP transactions on the SXP blockchain.<br> A new version of SLP is currently being developed that will be different from the current implementation on testnet. The new version will focus
+                                    on better features that more widely recognized and known by developers and other projects in the industry.
+                                </p>
+                                <p class="solar">Status: In development</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption">Documentation for Creators and Developers</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">Dedicated documentation will be published for developers and creators to interact with the SLP features of the SXP blockchain. These features are very rich in certain use-cases for normal end-users, artists, developers
+                                    and enterprises.
+                                </p>
+                                <p class="solar">Status: Not started.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption">SLP Libraries</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">Along with the SLP documentation, Solar is going to provide SDK’s for exchanges and developers to integrate the SLP features in their platform or software.
+                                </p>
+                                <p class="solar">Status: Not started.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption">New Desktop Wallet v3</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">A new desktop wallet will be released and enhanced to support the basic functions for SLP. Such as fungible and non-fungible token creation together with tools to view other SLP assets on the blockchain.
+                                </p>
+                                <p class="solar">Status: Not started.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"> Testnet & Mainnet Explorer</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">A new explorer will be deployed to support SLP features and Core v3 transactions. </p>
+                                <p class="solar">Status: Not started.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check" style="color:orangered;"></i> Exploring 3rd Party Integration</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">The Solar project will review potential partnership opportunities with third-parties to integrate SXP features on their products. This could be anything from payment platforms, to exchanges and academics or universities.
+                                </p>
+                                <p class="solar">Status: Complete - pending announcement</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check" style="color:orangered;"></i> Governance Module Enabled</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">The governance module is a plugin that can be enabled in the Solar Desktop Wallet. This module will allow delegates to vote for vital core decisions. More information about this feature will be described in the final whitepaper
+                                    of 2022.
+                                </p>
+                                <p class="solar">Status: Complete - Pending documentation and deployment on mainnet.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12" style="margin-top:50px;">
+                    <h2 class="roadmap-milestone mt-25 mb-2" style="text-align:center;justify-content:center;">Individual Projects</h2>
+                    <h4 class="mb-2 mt-2" style="color:black;text-align:center;justify-content:center;">Projects recognized by the Solar Foundation
+                    </h4>
+                    <div class="accordion">
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check" style="color:orangered;"></i> Branded Armor Browser
+                                    Wallet</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">In collaboration with delegate "leitesv", we will release a browser wallet that will have the similar feeling and experience as the well-known MetaMask wallet. The Armor will be enhanced with features to support SLP tokens
+                                    once SLP becomes available.
+                                </p>
+                                <p class="solar">Status: Pending review. <br>The development of Branded Armor Browser Wallet is complete and has been pushed to Firefox and Chrome webstore and is currently pending review.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption">Solar DEX</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">Delegate leitesv will release a cross-chain decentralised exchange and bridge blockchains. More details to be announced.
+                                </p>
+                                <p class="solar">Status: Not started.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption">Solar in Space</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">
+                                    Proof of Concept using LoRa by delegate friendsoflittleyus
+                                </p>
+                                <p class="solar">Status: Testing phase</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check"></i> Solar Metaverse Alpha</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">The initial whitepaper won’t include any detailed information about the Metaverse, since we are still exploring ideas and opportunities. The main goal of the Metaverse is to create a “game-like” experience for users to
+                                    interact in a 3D open world with other users and explore the blockchain. Several blockchain features will be focused on selling space in the Metaverse for building blocks and advertising blocks. Account creation and
+                                    quests to earn SXP will be included in the Alpha release. Only a selected amount of people will be able to participate in the Alpha release. After a successful release, we will update the whitepaper with the new details
+                                    regarding this topic.
+                                </p>
+                                <p class="solar">Status: Complete - The first version was released in the form of a minecraft-like game called Solarcraft.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check" style="color:orangered;"></i> Solar Metaverse Beta (District53)</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">The team that is working on the Metaverse decided to brand the game as "District 53" and continue in a minecraft-type of game. More information to be announced.
+                                </p>
+                                <p class="solar">Status: Ongoing - District53 Beta is now live for testing, visit https://district53.io to learn more.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption">Solar Metaverse Release (District53)</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">The official release of District 53. More information to be announced.
+                                </p>
+                                <p class="solar">Status: Pending completion of the beta stage.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption">NFT Marketplace</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">A joint collaboration between delegate nft and delegate leitesv, they will release the NFT Marketplace for SXP. More information to be announced after the beta.
+                                </p>
+                                <p class="solar">Status: In development. Pending SLP completion.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check"></i> Delegates Proposal Platform</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">The delegates are a crucial part of the network. These are community members that are running one of the 53 nodes on the SXP blockchain. Delegates are chosen by the voters (SXP holders) and contribute to the network. Contribution
+                                    proposals are posted on the delegate page so it is important to elect delegates who are doing more than just running a node and sharing rewards. Some delegates can contribute to the security of the network, which is
+                                    the most vital contribution. Other contributions can be in the form of tools for node operators and the community, or contributions in the form of community and marketing development or simply organizing meetups and
+                                    spread the word about the Solar project. This product will be developed by delegate leitesv.
+                                </p>
+                                <p class="solar">Status: Complete - Visit https://delegates.solar.org to learn more.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption">Solar Launchpad</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">Developed by delegates leitesv, the Solar Launchpad is a platform where users can present their projects that are created on the SXP blockchain using the SLP features.
+                                </p>
+                                <p class="solar">Status: Not started.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion__item">
+                            <button class="accordion__btn">
+                                <span class="accordion__caption"><i class="fa fa-check" style="color:orangered;"></i> Dokdo Wallet</span>
+                                <span class="accordion__icon"><i class="fa fa-plus"></i></span>
+                            </button>
+                            <div class="accordion__content">
+                                <p class="solar">A licensed entity, separated from the Solar Foundation. Dokdo will develop an exchange and offer custodian wallet services that are FATF compliant.
+                                    <br>Dokdo will focus on enabling staking and voting for anyone that is currently affected by the travel rule.
+                                </p>
+                                <p class="solar">Status: In progress.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include "/blocks/footer.twig" %}
+
+
+</body>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'layout.twig' %} {% block body %}
+
+<body data-spy="scroll" data-target="#mobile-wallet-menu" data-offset="150">
+
+
+
+    {% include "/blocks/navbar.twig" %}
+
+
+    <section class="banner-7 bg_img oh bottom_right" data-background="./assets/images/banner/banner-bg-7.jpg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="section-header  coverage-header">
+                        <h5 class="cate">Swap from ERC20/BEP20 to our native coin on mainnet!</h5>
+                        <h2 class="title">Mainnet Swap</h2>
+                        <p>
+                            Swipe (SXP) will be swapped to a native asset on our own Layer-1 blockchain.<br> Having a Layer-1 blockchain will allow us to grow and create many utilities for communities, developers and enterprises all around the world.<br>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="trial-section" style="margin-top:100px;margin-bottom:100px;">
+        <div class="container">
+            <div class="trial-wrapper padding-top padding-bottom bg_img style-two" data-background="./assets/images/bg/trial.png" style="background-image: url(&quot;./assets/images/bg/trial.png&quot;);">
+                <div class="trial-content">
+                    <h3 class="title">Swap your tokens now!</h3>
+                    <p>
+                        Use the decentralised bridge to swap from <br>ERC20/BEP20 SXP to Mainnet SXP.
+                    </p>
+                </div>
+                <div class="trial-button">
+                    <a href="https://swap.solar.org" target="_blank" class="button-3 long-light active">Swap Now <i
+                            class="flaticon-right ml-xl-2"></i></a>
+                </div>
+                <div class="trial-button">
+                    <a href="https://docs.solar.org/sxpswap/introduction/" target="_blank" class="button-3 long-light active">Swap Instructions <i class="ml-xl-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include "/blocks/footer.twig" %}
+
+</body>
+{% endblock %}

@@ -1,0 +1,13 @@
+<script src="../assets/js/socket.io.slim.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        const socket = io();
+        socket.emit('getwallet', {
+            walletId: 'Sdao2USyAz9B6RBgZeFyNDePuQAxfzZZHE'
+        });
+        socket.on('showwallet', function(data) {
+            $('#balance').html(data.balance + ' SXP');
+            console.log(data)
+        });
+    });
+</script>

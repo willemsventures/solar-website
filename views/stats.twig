@@ -1,0 +1,90 @@
+{% extends 'components/layout.twig' %} {% block body %}
+
+<body>
+    <!---->
+    {% include "/sections/about/stats/heading.twig" %}
+    <!---->
+    <div class="container">
+        <div class="layout-specing" style="margin-top:25px;">
+            {% include "/sections/about/stats/mainnet-stats.twig" %}
+            <!---->
+            {% include "/sections/about/stats/erc20-stats.twig" %}
+            <!---->
+            {% include "/sections/about/stats/bep20-stats.twig" %}
+            <!---->
+            {% include "/sections/about/stats/foundation-stats.twig" %}
+        </div>
+    </div>
+
+
+</body>
+{% endblock %}
+<!---->
+
+{% block javascripts %}
+
+
+<!---->
+{% include "sections/about/about-solar/scripts.twig" %}
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/jquery-ui.min.js"></script>
+<script src="assets/js/socket.io.slim.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        const socket = io();
+        socket.emit('getwallet', {
+            walletId: 'Sdao2USyAz9B6RBgZeFyNDePuQAxfzZZHE'
+        });
+        socket.on('showwallet', function(data) {
+            $('#balance').html(data.balance + ' SXP');
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        var socket = io();
+        socket.emit('getWalletSent', {
+            walletId: 'Sdao2USyAz9B6RBgZeFyNDePuQAxfzZZHE'
+        });
+        socket.on('showWalletSent', function(data) {
+            var mainTable = document.getElementById("transactions");
+            var tr,
+                th;
+            data.forEach(function(row) {
+                tr = document.createElement("tr");
+
+                th = document.createElement("th");
+                th.innerHTML = row.nonce;
+                th.className = 'p-3'
+                tr.appendChild(th);
+
+                th = document.createElement("th");
+                th.innerHTML = row.recipient;
+                th.className = 'p-3'
+                tr.appendChild(th);
+
+                th = document.createElement("th");
+                th.innerHTML = (parseFloat(row.amount) / 100000000).toFixed(0) + ' SXP';
+                th.className = 'text-center p-3'
+                tr.appendChild(th);
+
+                th = document.createElement("th");
+                th.innerHTML = '<a target="_blank" href="https://explorer.solar.org/transactions/' + row.id + '">' + row.memo.substr(0, 50) + '...' + '</a>';
+                th.className = 'text-center p-3'
+                tr.appendChild(th);
+
+                th = document.createElement("th");
+                th.innerHTML = row.timestamp;
+                th.className = 'text-end p-3'
+                tr.appendChild(th);
+
+                transactions.appendChild(tr);
+            });
+
+        });
+
+
+    });
+</script>
+<!---->
+{% endblock %}

@@ -1,0 +1,35 @@
+<br>
+<hr>
+<h6 class="text-muted mb-1">Solar Blockchain Foundation</h6>
+<div class="row">
+
+    <div class="card shadow border-0 p-4 pb-0 mb-2 rounded">
+        <div class="d-flex justify-content-between">
+            <h6 class="mb-0 fw-bold">Solar Blockchain Foundation (Donations) </h6>
+        </div>
+        <div id="dashboard" class="apex-chart"></div>
+        <p> Solar Blockchain Foundation Wallet (SXP):
+            <a target="_blank" href="https://explorer.solar.org/wallets/Sdao2USyAz9B6RBgZeFyNDePuQAxfzZZHE">Sdao2USyAz9B6RBgZeFyNDePuQAxfzZZHE</a> | Current Balance: <span id="balance"></span>
+        </p>
+    </div>
+
+
+    <div class="d-flex justify-content-between p-4 shadow rounded-top">
+        <h6 class="fw-bold mb-0">Solar Blockchain Foundation Wallet (Last 100 Transactions)</h6>
+    </div>
+    <div class="table-responsive shadow rounded-bottom" data-simplebar style="height: 545px;">
+        <table class="table table-center bg-white mb-0">
+            <thead>
+                <tr>
+                    <th class="border-bottom p-3">Nonce</th>
+                    <th class="border-bottom p-3" style="min-width: 220px;">Recipient</th>
+                    <th class="text-center border-bottom p-3">Amount</th>
+                    <th class="text-center border-bottom p-3" style="min-width: 150px;">
+                        Memo</th>
+                    <th class="text-end border-bottom p-3">Timestamp</th>
+                </tr>
+            </thead>
+            <tbody id='transactions'></tbody>
+        </table>
+    </div>
+</div>
