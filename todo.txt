@@ -1,12 +1,9 @@
 Home
-* change header image
 * get started button
 * documentation button
 * staking button
-* image build tools and explorer all features
 
 About>Solar Foundation
-* new image community driven
 * solar foundation information
 * how to join the foundation
 * community driven text
@@ -20,11 +17,9 @@ About>statistics
 
 Wallets
 * text wallets
-* mockup wallets
 
 Blockchain>Solar Core
 * replace header image with new one (waiting for gym)
-* replace image About Solar Network
 
 Blockchain>Staking
 * Whole page
