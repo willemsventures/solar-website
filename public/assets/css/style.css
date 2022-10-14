@@ -88,6 +88,14 @@ p {
     display: inline-block;
 }
 
+.display-light-mode {
+    display: none!important
+}
+
+.display-dark-mode {
+    display: none!important
+}
+
 #topnav .logo:focus {
     outline: none;
 }

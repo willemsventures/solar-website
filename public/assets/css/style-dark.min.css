@@ -7350,6 +7350,14 @@ body[data-layout-mode=dark] .mode-light {
     display: none!important
 }
 
+.display-light-mode {
+    display: none!important
+}
+
+.display-dark-mode {
+    display: none!important
+}
+
 #topnav .logo .l-light,
 #topnav .logo .logo-dark-mode {
     display: inline-block!important
