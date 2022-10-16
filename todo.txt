@@ -1,8 +1,2 @@
-About>statistics
-* Check whole page
-
-Dark mode
-* check all pages (especially CTA's and statistics)
-
 Canvas
 * Latest Contributions
