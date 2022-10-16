@@ -1,6 +1,3 @@
-About>Solar Foundation
-* community driven text
-
 About>roadmap
 * whole page
 
