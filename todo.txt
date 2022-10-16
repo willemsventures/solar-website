@@ -21,3 +21,6 @@ Canvas
 
 Cookies notice
 * add
+
+Swap page
+* add links to exchanges
