@@ -27,7 +27,3 @@ pm2 start solar-website.js --watch
 Website visible at "https://localhost:8789"
 # solar-website
 
-todo:
-- add info about contributing and using landrick theme
-- change 404 page
-- add webshop
