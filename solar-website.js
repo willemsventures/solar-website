@@ -71,13 +71,13 @@ app.use(function(err, req, res, next) {
 server.listen(8795);
 
 const Blockchains = {
-    byChainId: (chainId) => {if (chainId==1) {return Blockchains.Ethereum} else {return Blockchains.BSC}},
+    byChainId: (chainId) => { if (chainId == 1) { return Blockchains.Ethereum } else { return Blockchains.BSC } },
     Ethereum: {
         chainId: 1,
         name: "Ethereum",
         tokenAddress: "0x8ce9137d39326ad0cd6491fb5cc0cba0e089b6a9",
         knownWallets: {
-            "0x0000000000000000000000000000000000000000":"Null address",
+            "0x0000000000000000000000000000000000000000": "Null address",
             "0x71f7505a78fd1e044ebf38ab6876700a907fc53a": "SXP Swap Contract",
             "0xaf04c95b6a5efa851136049203093468c197517c": "Swipe Founders (locked tokens)",
             "0x6c42c72e80481ad654e63d364bb9d86c90819a25": "Swipe Treasury (Binance)",
@@ -94,7 +94,7 @@ const Blockchains = {
         name: "BSC",
         tokenAddress: "0x47bead2563dcbf3bf2c9407fea4dc236faba485a",
         knownWallets: {
-            "0x0000000000000000000000000000000000001004":"BSC: Token Hub",
+            "0x0000000000000000000000000000000000001004": "BSC: Token Hub",
             "0xe2fc31f816a9b94326492132018c3aecc4a93ae1": "Binance: Hot wallet 7",
             "0x8894e0a0c962cb723c1976a4421c95949be2d4e3": "Binance: Hot wallet 6",
             "0x2ff3d0f6990a40261c66e1ff2017acbc282eb6d0": "Venus vSXP Token",
@@ -112,21 +112,21 @@ let TopBSCHolders = []
 let TopETHHolders = []
 
 function getLabel(address, chainId) {
-    return Blockchains.byChainId(chainId).knownWallets[address]? Blockchains.byChainId(chainId).knownWallets[address] : undefined;
-} 
+    return Blockchains.byChainId(chainId).knownWallets[address] ? Blockchains.byChainId(chainId).knownWallets[address] : undefined;
+}
 
 async function getTopHolders(chainId) {
-    
+
     const tokenByChain = {
         1: "0x8ce9137d39326ad0cd6491fb5cc0cba0e089b6a9",
-        56:"0x47bead2563dcbf3bf2c9407fea4dc236faba485a"
+        56: "0x47bead2563dcbf3bf2c9407fea4dc236faba485a"
     }
 
     function loadHolders(data) {
         if (data && data.items) {
-                
-            let top_holders = data.items.slice(0,10).map((item) => {
-                return {address:item.address, balance: item.balance, label: getLabel(item.address, chainId), percentage: (100 * item.balance) / item.total_supply }
+
+            let top_holders = data.items.slice(0, 10).map((item) => {
+                return { address: item.address, balance: item.balance, label: getLabel(item.address, chainId), percentage: (100 * item.balance) / item.total_supply }
             })
 
             if (chainId == Blockchains.Ethereum.chainId) {
@@ -180,19 +180,19 @@ io.on('connection', function(socket) {
     /* covalent api */
 
     socket.on('getBSCholders', function(input) {
-        (async () => {
-            socket.emit('showBSCholders', {top_holders: TopBSCHolders})
+        (async() => {
+            socket.emit('showBSCholders', { top_holders: TopBSCHolders })
         })()
     });
 
     socket.on('getETHholders', function(input) {
-        (async () => {
-            socket.emit('showETHholders', {top_holders: TopETHHolders})
+        (async() => {
+            socket.emit('showETHholders', { top_holders: TopETHHolders })
         })()
     });
 
     socket.on('getBlockchainStats', function(input) {
-        (async () => {
+        (async() => {
             let response = {
                 wallet_count: 0,
                 total_burned: 0,
@@ -208,7 +208,7 @@ io.on('connection', function(socket) {
             let rq_wallets = await (await fetch("https://sxp.mainnet.sh/api/wallets")).json()
             if (rq_wallets.meta) {
                 response.wallet_count = rq_wallets.meta.totalCount
-                response.unswapped = 520737576 - (rq_wallets.data[0].balance/100000000)
+                response.unswapped = 520737576 - (rq_wallets.data[0].balance / 100000000)
             }
             let rq_blockchain = await (await fetch("https://sxp.mainnet.sh/api/blockchain")).json()
             if (rq_blockchain.data.burned.total) {
@@ -217,13 +217,13 @@ io.on('connection', function(socket) {
                 response.produced = (response.supply - response.total_burned) - 52073757600000000;
             }
 
-            response.bsc_binance_custody = TopBSCHolders.filter((holder) =>  Blockchains.BSC.custodiedWallets.indexOf(holder.address) >= 0).reduce((pv, cv) => { return pv + cv.percentage; }, 0)
+            response.bsc_binance_custody = TopBSCHolders.filter((holder) => Blockchains.BSC.custodiedWallets.indexOf(holder.address) >= 0).reduce((pv, cv) => { return pv + cv.percentage; }, 0)
 
-            response.bsc_other_exchanges = TopBSCHolders.filter((holder) =>  Blockchains.BSC.otherExchangesWallets.indexOf(holder.address) >= 0).reduce((pv, cv) => { return pv + cv.percentage; }, 0)
+            response.bsc_other_exchanges = TopBSCHolders.filter((holder) => Blockchains.BSC.otherExchangesWallets.indexOf(holder.address) >= 0).reduce((pv, cv) => { return pv + cv.percentage; }, 0)
 
-            response.eth_binance_custody = TopETHHolders.filter((holder) =>  Blockchains.Ethereum.custodiedWallets.indexOf(holder.address) >= 0).reduce((pv, cv) => { return pv + cv.percentage; }, 0)
+            response.eth_binance_custody = TopETHHolders.filter((holder) => Blockchains.Ethereum.custodiedWallets.indexOf(holder.address) >= 0).reduce((pv, cv) => { return pv + cv.percentage; }, 0)
 
-            response.eth_other_exchanges = TopETHHolders.filter((holder) =>  Blockchains.Ethereum.otherExchangesWallets.indexOf(holder.address) >= 0).reduce((pv, cv) => { return pv + cv.percentage; }, 0)
+            response.eth_other_exchanges = TopETHHolders.filter((holder) => Blockchains.Ethereum.otherExchangesWallets.indexOf(holder.address) >= 0).reduce((pv, cv) => { return pv + cv.percentage; }, 0)
             console.log(response)
             socket.emit('showBlockchainStats', response)
         })()
@@ -233,7 +233,7 @@ io.on('connection', function(socket) {
 
     socket.on('getwallet', function(input) {
         (async() => {
-           let response = await sxpapi.getWalletByID(input.walletId);
+            let response = await sxpapi.getWalletByID(input.walletId);
             const data = (response.data);
             const flatJson = {
                 balance: (parseFloat(data.balance) / 100000000).toFixed(2)
@@ -246,7 +246,7 @@ io.on('connection', function(socket) {
     socket.on('getWalletSent', function(input) {
 
         (async() => {
-           let response = await sxpapi.getWalletSentTransactions(input.walletId);
+            let response = await sxpapi.getWalletSentTransactions(input.walletId);
 
             const data = (response.data);
             const flatJson = [];
@@ -254,7 +254,7 @@ io.on('connection', function(socket) {
             for (let i = 0; i < data.length; i++) {
                 let tempJson = {
                     nonce: data[i].nonce,
-                    recipient: data[i].recipient? data[i].recipient : data[i].asset.transfers? data[i].asset.transfers.length > 1? `${data[i].asset.transfers.length} recipients` : `${data[i].asset.transfers[0].recipientId}` : "Other",
+                    recipient: data[i].recipient ? data[i].recipient : data[i].asset.transfers ? data[i].asset.transfers.length > 1 ? `${data[i].asset.transfers.length} recipients` : `${data[i].asset.transfers[0].recipientId}` : "Other",
                     memo: data[i].memo == undefined ? '<span>-</span>' : data[i].memo,
                     amount: data[i].amount,
                     id: data[i].id,
