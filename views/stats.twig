@@ -83,6 +83,7 @@
 <script src="assets/js/jquery-3.3.1.min.js"></script>
 <script src="assets/js/jquery-ui.min.js"></script>
 <script src="assets/js/socket.io.slim.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         const socket = io();
@@ -199,6 +200,216 @@
         });
 
 
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        var socket = io();
+    socket.emit('getTxStats', {});
+        socket.on('showTxStats', function(data) {
+        var options = {
+          series: [{
+          name: "Daily Volume",
+          data: Object.entries(data.transactions).map(([key, value]) => {return {y:value.volume/1e8, x: key.replaceAll("-","/")}}).reverse()
+        }],
+          chart: {
+          type: 'area',
+          stacked: false,
+          stroke: {
+  curve: 'smooth',
+},
+          height: 350,
+          zoom: {
+            type: 'x',
+            enabled: true,
+            autoScaleYaxis: true
+          },
+          toolbar: {
+            autoSelected: 'zoom'
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        markers: {
+          size: 0,
+        },
+        title: {
+          text: 'Daily Volume in SXP since launch',
+          align: 'left'
+        },
+        colors:['#ed5c15'],
+        fill: {
+          type: 'gradient',
+          gradient: {
+            shadeIntensity: 1,
+            inverseColors: false,
+            opacityFrom: 0.5,
+            opacityTo: 0,
+            stops: [0, 90, 100]
+          },
+        },
+        yaxis: {
+            type: 'category',
+          labels: {
+            formatter: function (val) {
+                return `${val} SXP`;
+            },
+          },
+          title: {
+            text: 'Volume in SXP'
+          },
+        },
+        xaxis: {
+          type: 'datetime',
+        },
+        tooltip: {
+          shared: false,
+          y: {
+            formatter: function (val) {
+              
+              return `${parseInt((val).toFixed(0)).toLocaleString()} SXP`;
+            }
+          }
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart1"), options);
+        chart.render();
+
+        var options = {
+          series: [{
+            name: "Daily transfers",
+          data: Object.entries(data.transactions).map(([key, value]) => {return {y:value.transfers, x: key.replaceAll("-","/")}}).reverse()
+        }],
+          chart: {
+          type: 'area',
+          stacked: false,
+          height: 350,
+          zoom: {
+            type: 'x',
+            enabled: true,
+            autoScaleYaxis: true
+          },
+          toolbar: {
+            autoSelected: 'zoom'
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        markers: {
+          size: 0,
+        },
+        title: {
+          text: 'Daily transfers since launch',
+          align: 'left'
+        },
+        colors:['#ed5c15'],
+        fill: {
+          type: 'gradient',
+          gradient: {
+            shadeIntensity: 1,
+            inverseColors: false,
+            opacityFrom: 0.5,
+            opacityTo: 0,
+            stops: [0, 90, 100]
+          },
+        },
+        yaxis: {
+            type: 'category',
+          labels: {
+            formatter: function (val) {
+              return val;
+            },
+          },
+          title: {
+            text: 'Daily transfers'
+          },
+        },
+        xaxis: {
+          type: 'datetime',
+        },
+        tooltip: {
+          shared: false,
+          y: {
+            formatter: function (val) {
+              return val;
+            }
+          }
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart2"), options);
+        chart.render();
+        var options = {
+          series: [{
+            name: "Daily active usage",
+          data: Object.entries(data.transactions).map(([key, value]) => {return {y:value.wallets, x: key.replaceAll("-","/")}}).reverse()
+        }],
+          chart: {
+          type: 'area',
+          stacked: false,
+          height: 350,
+          zoom: {
+            type: 'x',
+            enabled: true,
+            autoScaleYaxis: true
+          },
+          toolbar: {
+            autoSelected: 'zoom'
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        markers: {
+          size: 0,
+        },
+        title: {
+          text: 'Daily active usage since launch',
+          align: 'left'
+        },
+        colors:['#ed5c15'],
+        fill: {
+          type: 'gradient',
+          gradient: {
+            shadeIntensity: 1,
+            inverseColors: false,
+            opacityFrom: 0.5,
+            opacityTo: 0,
+            stops: [0, 90, 100]
+          },
+        },
+        yaxis: {
+            type: 'category',
+          labels: {
+            formatter: function (val) {
+              return val;
+            },
+          },
+          title: {
+            text: 'Daily active usage'
+          },
+        },
+        xaxis: {
+          type: 'datetime',
+
+        },
+        tooltip: {
+          shared: false,
+          y: {
+            formatter: function (val) {
+              return val;
+            }
+          }
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart3"), options);
+        chart.render();
+
+        });
     });
 </script>
 <!---->
