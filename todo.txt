@@ -4,9 +4,6 @@ About>statistics
 Wallets
 * text wallets
 
-Shop
-* whole code
-
 Dark mode
 * check all pages (especially CTA's)
 

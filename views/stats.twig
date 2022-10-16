@@ -184,7 +184,7 @@
                 tr.appendChild(th);
 
                 th = document.createElement("th");
-                th.innerHTML = '<a target="_blank" href="https://explorer.solar.org/transactions/' + row.id + '">' + row.memo.substr(0, 50) + '...' + '</a>';
+                th.innerHTML = '<a target="_blank" name="external" onclick="confirmExit(this.name)" href="https://explorer.solar.org/transactions/' + row.id + '">' + row.memo.substr(0, 50) + '...' + '</a>';
                 th.className = 'text-center p-3'
                 tr.appendChild(th);
 
