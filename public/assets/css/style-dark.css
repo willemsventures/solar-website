@@ -7588,3 +7588,7 @@ ffcanvas-header .light-version {
 .offcanvas .offcanvas-header .btn-close {
     color: #f8f9fa;
 }
+
+.apexcharts-tooltip-title {
+    background: #ed5c15 !important;
+}

@@ -7395,5 +7395,9 @@ body[data-layout-mode=dark] .mode-light {
     color: #f8f9fa
 }
 
+.apexcharts-tooltip-title {
+    background: #ed5c15 !important;
+}
+
 
 /*# sourceMappingURL=style-dark-yellow.min.css.map */
