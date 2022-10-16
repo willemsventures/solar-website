@@ -7,9 +7,6 @@ About>statistics
 Wallets
 * text wallets
 
-Blockchain>Staking
-* Whole page
-
 Shop
 * whole code
 
