@@ -5,7 +5,7 @@ Wallets
 * text wallets
 
 Dark mode
-* check all pages (especially CTA's)
+* check all pages (especially CTA's and statistics)
 
 Canvas
 * Latest Contributions
