@@ -1,14 +1,3 @@
-Home
-* get started button
-* documentation button
-* staking button
-
-About>Solar Foundation
-* solar foundation information
-* how to join the foundation
-* community driven text
-* cta
-
 About>roadmap
 * whole page
 
@@ -18,9 +7,6 @@ About>statistics
 Wallets
 * text wallets
 
-Blockchain>Solar Core
-* replace header image with new one (waiting for gym)
-
 Blockchain>Staking
 * Whole page
 
@@ -29,9 +15,12 @@ Shop
 
 Dark mode
 * check all pages (especially CTA's)
-* check logo in navbar
 
 Canvas
 * Latest Contributions
 
+Cookies notice
+* add
 
+Swap page
+* add links to exchanges
