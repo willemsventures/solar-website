@@ -105,7 +105,7 @@ const Blockchains = {
             "0x44cf30ea4e58818bfae4b8499be409cd4fdd5a20": "SXP Swap Contract",
             "0x47bead2563dcbf3bf2c9407fea4dc236faba485a": "Swipe: SXP Token"
         },
-        custodiedWallets: ["0xe2fc31f816a9b94326492132018c3aecc4a93ae1", "0x8894e0a0c962cb723c1976a4421c95949be2d4e3", "0xf977814e90da44bfa03b6295a0616a897441acec"],
+        custodiedWallets: ["0xe2fc31f816a9b94326492132018c3aecc4a93ae1", "0x8894e0a0c962cb723c1976a4421c95949be2d4e3", "0xf977814e90da44bfa03b6295a0616a897441acec", "0x0000000000000000000000000000000000001004"],
         otherExchangesWallets: []
     }
 }
