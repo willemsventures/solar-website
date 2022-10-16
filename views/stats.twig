@@ -4,7 +4,7 @@
     <!---->
     {% include "/sections/about/stats/heading.twig" %}
     <!---->
-    <div class="container">
+    <div class="container" style="padding-bottom: 25px;">
         <div class="layout-specing" style="margin-top:25px;">
             {% include "/sections/about/stats/mainnet-stats.twig" %}
             <!---->
@@ -36,7 +36,71 @@
             walletId: 'Sdao2USyAz9B6RBgZeFyNDePuQAxfzZZHE'
         });
         socket.on('showwallet', function(data) {
-            $('#balance').html(data.balance + ' SXP');
+            $('#balance').html(parseInt(data.balance).toLocaleString() + ' SXP');
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        const socket = io();
+        socket.emit('getBlockchainStats', {});
+        socket.on('showBlockchainStats', function(data) {
+            $('#c_supply').html(parseInt((data.supply/1e8).toFixed(0)).toLocaleString());
+            $('#unswapped').html(parseInt((data.unswapped).toFixed(0)).toLocaleString());
+            $('#wallet_count').html(data.wallet_count.toLocaleString());
+            $('#total_burned').html(parseInt((data.total_burned/1e8).toFixed(0)).toLocaleString());
+            $('#sxp_produced').html(parseInt((data.produced/1e8).toFixed(0)).toLocaleString());
+            $("#erc20_binance").html(`${parseInt((data.eth_binance_custody).toFixed(0)).toLocaleString()}%`)
+            $("#bep20_binance").html(`${parseInt((data.bsc_binance_custody).toFixed(0)).toLocaleString()}%`)
+            $("#erc20_otherexchanges").html(`${parseInt((data.eth_other_exchanges).toFixed(0)).toLocaleString()}%`)
+            $("#bep20_otherexchanges").html(`${parseInt((data.bsc_other_exchanges).toFixed(0)).toLocaleString()}%`)
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        const socket = io();
+
+        function loadHolders(elementId,data) {
+            let erc20table = document.getElementById(elementId);
+            let top10 = data.top_holders.reduce((pv, cv) => { return pv + cv.percentage; }, 0).toFixed(2)
+            
+            let swapped = data.top_holders.find(th => th.address == "0x71f7505a78fd1e044ebf38ab6876700a907fc53a" || th.address == "0x44cf30ea4e58818bfae4b8499be409cd4fdd5a20").percentage
+            document.getElementById(`${elementId}_top`).innerHTML = `${top10}%`
+            document.getElementById(`${elementId}_swapped`).innerHTML = `${parseFloat(swapped).toFixed(2)}%`
+            data.top_holders.forEach(function(row) {
+                tr = document.createElement("tr");
+
+                th = document.createElement("th");
+                th.innerHTML = `<a href="${elementId == "erc20"? 'https://etherscan.io/token/0x8ce9137d39326ad0cd6491fb5cc0cba0e089b6a9?a='+ row.address : 'https://bscscan.io/token/0x8ce9137d39326ad0cd6491fb5cc0cba0e089b6a9?a='+ row.address}">${row.label? row.label : row.address}</a>`;
+                th.className = 'p-3'
+                tr.appendChild(th);
+
+                th = document.createElement("th");
+                th.innerHTML = `${(row.balance/1000000000000000000).toLocaleString()} SXP`;
+                th.className = 'p-3'
+                tr.appendChild(th);
+
+                th = document.createElement("th");
+                th.innerHTML = "";
+                th.className = 'p-3'
+                tr.appendChild(th);
+
+                th = document.createElement("th");
+                th.innerHTML = `${row.percentage.toFixed(2)}%`;
+                th.className = 'p-3'
+                tr.appendChild(th);
+
+                erc20table.appendChild(tr)
+            });
+        }
+        socket.emit('getETHholders', {});
+        socket.emit('getBSCholders', {});
+        socket.on('showETHholders', function(data) {
+            loadHolders('erc20', data)
+        });
+        socket.on('showBSCholders', function(data) {
+            loadHolders('bep20', data)
         });
     });
 </script>
@@ -64,7 +128,7 @@
                 tr.appendChild(th);
 
                 th = document.createElement("th");
-                th.innerHTML = (parseFloat(row.amount) / 100000000).toFixed(0) + ' SXP';
+                th.innerHTML = parseInt((parseInt(row.amount) / 100000000).toFixed(0)).toLocaleString() + ' SXP';
                 th.className = 'text-center p-3'
                 tr.appendChild(th);
 
@@ -78,7 +142,7 @@
                 th.className = 'text-end p-3'
                 tr.appendChild(th);
 
-                transactions.appendChild(tr);
+                mainTable.appendChild(tr);
             });
 
         });
