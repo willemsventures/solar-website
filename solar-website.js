@@ -75,6 +75,7 @@ const Blockchains = {
     Ethereum: {
         chainId: 1,
         name: "Ethereum",
+        tag: "eth",
         tokenAddress: "0x8ce9137d39326ad0cd6491fb5cc0cba0e089b6a9",
         knownWallets: {
             "0x0000000000000000000000000000000000000000": "Null address",
@@ -92,6 +93,7 @@ const Blockchains = {
     BSC: {
         chainId: 56,
         name: "BSC",
+        tag: "bsc",
         tokenAddress: "0x47bead2563dcbf3bf2c9407fea4dc236faba485a",
         knownWallets: {
             "0x0000000000000000000000000000000000001004": "BSC: Token Hub",
@@ -141,14 +143,14 @@ async function getTopHolders(chainId) {
 
         response = request.get(`https://api.covalenthq.com/v1/${chainId}/tokens/${tokenByChain[chainId]}/token_holders/?key=ckey_f3365976a84447f281ca1fdfd55`, (error, response, body) => {
             if (body.data && body.data.items) {
-                fs.writeFileSync(`holders-${chainId}.json`, JSON.stringify(body));
+                fs.writeFileSync(`data/holders-${Blockchains.byChainId(chainId).tag}.json`, JSON.stringify(body));
                 loadHolders(body.data)
             }
         });
 
     } catch {
         try {
-            let rawHolders = fs.readFileSync(`holders-${chainId}.json`);
+            let rawHolders = fs.readFileSync(`data/holders-${Blockchains.byChainId(chainId).tag}.json`);
             let holders = JSON.parse(rawHolders)
             loadHolders(holders.data)
         } catch {
@@ -157,12 +159,12 @@ async function getTopHolders(chainId) {
     }
 }
 
-// setInterval(() => { // get top holders every 30 min
-//     getTopHolders(Blockchains.Ethereum.chainId)
-//     getTopHolders(Blockchains.BSC.chainId)
-// }, 1800000)
+setInterval(() => { // get top holders every 30 min
+    getTopHolders(Blockchains.Ethereum.chainId)
+    getTopHolders(Blockchains.BSC.chainId)
+}, 1800000)
 
-// // get top holders now
+// get top holders now
 
 getTopHolders(Blockchains.Ethereum.chainId)
 getTopHolders(Blockchains.BSC.chainId)
@@ -176,6 +178,12 @@ const sxpApi = sxpApiHelper.sxpApi;
 const sxpapi = new sxpApi.default();
 
 io.on('connection', function(socket) {
+
+    socket.on('getTxStats', function(input) {
+        (async() => {
+            socket.emit('showTxStats', JSON.parse(fs.readFileSync(`data/mainnet.json`)))
+        })()
+    });
 
     /* covalent api */
 

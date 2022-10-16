@@ -1,26 +1,8 @@
-About>roadmap
-* whole page
-
 About>statistics
 * Check whole page
 
-Wallets
-* text wallets
-
-Blockchain>Staking
-* Whole page
-
-Shop
-* whole code
-
 Dark mode
-* check all pages (especially CTA's)
+* check all pages (especially CTA's and statistics)
 
 Canvas
 * Latest Contributions
-
-Cookies notice
-* add
-
-Swap page
-* add links to exchanges
