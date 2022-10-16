@@ -1,14 +1,8 @@
 About>statistics
 * Check whole page
 
-Wallets
-* text wallets
-
 Dark mode
 * check all pages (especially CTA's and statistics)
 
 Canvas
 * Latest Contributions
-
-Cookies notice
-* add
