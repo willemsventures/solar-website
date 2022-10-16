@@ -1,6 +1,3 @@
-About>roadmap
-* whole page
-
 About>statistics
 * Check whole page
 
